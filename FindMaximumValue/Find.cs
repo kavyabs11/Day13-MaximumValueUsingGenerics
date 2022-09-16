@@ -6,26 +6,27 @@ using System.Threading.Tasks;
 
 namespace FindMaximumValue
 {
-    public class Find
+    public class Find<T> where T : IComparable //class type generics
     {
-        public void ToCompare(string a, string b, string c)
+        public T[] values;
+        public Find(T[] values)
         {
-            if (a.CompareTo(b) > 0 && a.CompareTo(c) > 0 ||
-                a.CompareTo(b) >= 0 && a.CompareTo(c) > 0 ||
-                a.CompareTo(b) > 0 && a.CompareTo(c) >= 0)
-            {
-                Console.WriteLine($"{a} is Maximum");
-            }
-            else if (b.CompareTo(a) > 0 && b.CompareTo(c) > 0 ||
-                b.CompareTo(a) >= 0 && b.CompareTo(c) > 0 ||
-                b.CompareTo(a) > 0 && b.CompareTo(c) >= 0)
-            {
-                Console.WriteLine($"{b} is Maximum");
-            }
-            else
-            {
-                Console.WriteLine($"{c} is Maximum");
-            }
+            this.values = values;
+        }
+        public T[] Sorting(T[] values)
+        {
+            Array.Sort(values);
+            return values;
+        }
+        public T ToCompare(params T[] values)
+        {
+            T[] compare = Sorting(values);
+            return compare[^1];
+        }
+        public void Max()
+        {
+            T max = ToCompare(this.values);
+            Console.WriteLine($"{max} is maximum");
         }
     }
 }
