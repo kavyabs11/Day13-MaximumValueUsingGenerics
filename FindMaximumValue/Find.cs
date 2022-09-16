@@ -8,7 +8,7 @@ namespace FindMaximumValue
 {
     internal class Find
     {
-        public void ToCompare(int a, int b, int c)
+        public void ToCompare(float a, float b, float c)
         {
             if (a.CompareTo(b) > 0 && a.CompareTo(c) > 0)
             {
