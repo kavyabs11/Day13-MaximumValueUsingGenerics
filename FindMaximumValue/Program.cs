@@ -11,9 +11,9 @@
             Find<int> check1 = new Find<int>(intArray);
             Find<double> check2 = new Find<double>(doubleArray);
             Find<string> check3 = new Find<string>(stringArray);
-            check1.Max();
-            check2.Max();
-            check3.Max();
+            check1.PrintMax();
+            check2.PrintMax();
+            check3.PrintMax();
         }
-    }
+        }
 }

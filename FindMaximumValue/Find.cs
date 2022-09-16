@@ -23,10 +23,15 @@ namespace FindMaximumValue
             T[] compare = Sorting(values);
             return compare[^1];
         }
-        public void Max()
+        public T Max()
         {
             T max = ToCompare(this.values);
-            Console.WriteLine($"{max} is maximum");
+            return max;
+        }
+        public void PrintMax()
+        {
+            T max = ToCompare(this.values);
+            Console.WriteLine($"{max} is Maximum");
         }
     }
 }
